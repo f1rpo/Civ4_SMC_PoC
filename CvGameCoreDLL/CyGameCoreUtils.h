@@ -70,6 +70,4 @@ bool cyIsLimitedProject(int /*ProjectTypes*/ eProject);
 int cyGetCombatOdds(CyUnit* pAttacker, CyUnit* pDefender);
 int cyGetEspionageModifier(int /*TeamTypes*/ iOurTeam, int /*TeamTypes*/ iTargetTeam);
 
-void cyUpdatePlotIndicatorSize(); // smcpoc
-
 #endif	// CyGameCoreUtils_h
