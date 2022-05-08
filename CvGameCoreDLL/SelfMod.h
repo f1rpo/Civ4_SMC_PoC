@@ -3,14 +3,13 @@
 #define SELF_MOD_H
 
 /*	smcpoc: Let's put all runtime patches for Civ4BeyondSword.exe (v3.19)
-	in a single place. (But, so far, there's only one.) For the time being,
-	functions are exposed to Python through CyGameCoreUtils. */
+	in a single place. (But, so far, there's only one.) */
 
 class Civ4BeyondSwordMods
 {
 public:
 	bool isPlotIndicatorSizePatched() const { return m_bPlotIndicatorSizePatched; }
-	void patchPlotIndicatorSize(); // (exposed to Python)
+	void patchPlotIndicatorSize();
 private:
 	bool m_bPlotIndicatorSizePatched;
 };
