@@ -4,6 +4,7 @@
 #include "CyPlot.h"
 #include "CyCity.h"
 #include "CyUnit.h"
+#include "SelfMod.h" // smcpoc
 
 int cyIntRange(int iNum, int iLow, int iHigh)
 {
@@ -263,3 +264,8 @@ int cyGetEspionageModifier(int iOurTeam, int iTargetTeam)
 	return getEspionageModifier((TeamTypes)iOurTeam, (TeamTypes)iTargetTeam);
 }
 
+// smcpoc:
+void cyUpdatePlotIndicatorSize()
+{
+	smc::BtS_EXE.patchPlotIndicatorSize();
+}

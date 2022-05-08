@@ -25,6 +25,7 @@
 #include "CyPlot.h"
 #include "CyUnit.h"
 #include "CvEventReporter.h"
+#include "SelfMod.h" // smcpoc
 
 #include "CvDLLInterfaceIFaceBase.h"
 #include "CvDLLEntityIFaceBase.h"
@@ -21029,6 +21030,14 @@ int CvPlayer::getMusicScriptId(PlayerTypes eForPlayer) const
 
 void CvPlayer::getGlobeLayerColors(GlobeLayerTypes eGlobeLayerType, int iOption, std::vector<NiColorA>& aColors, std::vector<CvPlotIndicatorData>& aIndicators) const
 {
+	// <smcpoc>
+	if (!smc::BtS_EXE.isPlotIndicatorSizePatched())
+	{
+		/*	(No use in setting the GlobeLayer_DIRTY_BIT - caller won't have cleared
+			it yet. But the dirty bit seems to get set again at least once before
+			initialization is through. So we're actually saving a little time here.) */
+		return;
+	} // </smcpoc>
 	switch (eGlobeLayerType)
 	{
 	case GLOBE_LAYER_TRADE:
