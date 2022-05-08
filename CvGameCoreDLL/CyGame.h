@@ -158,6 +158,7 @@ public:
 	bool isSimultaneousTeamTurns();
 
 	bool isFinalInitialized();
+	void setScreenDimensions(int iWidth, int iHeight); // smcpoc
 
 	int /*PlayerTypes*/ getActivePlayer();
 	void setActivePlayer(int /*PlayerTypes*/ eNewValue, bool bForceHotSeat);

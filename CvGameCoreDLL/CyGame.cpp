@@ -626,6 +626,12 @@ bool CyGame::isFinalInitialized()
 	return m_pGame ? m_pGame->isFinalInitialized() : false;
 }
 
+// smcpoc:
+void CyGame::setScreenDimensions(int iWidth, int iHeight)
+{
+	m_pGame->setScreenDimensions(iWidth, iHeight);
+}
+
 int /*PlayerTypes*/ CyGame::getActivePlayer() 
 {
 	return m_pGame ? (int)m_pGame->getActivePlayer() : -1;

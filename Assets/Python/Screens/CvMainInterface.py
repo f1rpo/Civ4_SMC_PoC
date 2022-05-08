@@ -133,6 +133,9 @@ class CvMainInterface:
 		# Find out our resolution
 		xResolution = screen.getXResolution()
 		yResolution = screen.getYResolution()
+		# smcpoc: Inform DLL of screen res
+		gc.getGame().setScreenDimensions(xResolution, yResolution)
+
 		self.m_iNumPlotListButtons = (xResolution - (iMultiListXL+iMultiListXR) - 68) / 34
 		
 		screen.setDimensions(0, 0, xResolution, yResolution)
