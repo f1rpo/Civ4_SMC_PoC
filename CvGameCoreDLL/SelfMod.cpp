@@ -196,7 +196,7 @@ public:
 			};
 			// Where we expect the needle at iAddressOffset=0
 			uint const uiStartAddress = 0x00464930;
-			// How big a uiAdressOffset we contemplate
+			// How big an iAddressOffset we contemplate
 			int const iMaxAbsOffset = 256 * 1024;
 			if (uiStartAddress >= iMaxAbsOffset &&
 				uiStartAddress <= MAX_INT - iMaxAbsOffset)
@@ -269,8 +269,7 @@ private:
 	{
 		PlotIndicatorSize(float fOnScreen = 0, float fOffScreen = 0)
 		:	onScreen(fOnScreen), offScreen(fOffScreen) {}
-		/*	Overriding operator== for this nested thing would be a PITA -
-			if not impossible. */
+		// Overriding operator== for this nested thing would be a PITA
 		bool equals(PlotIndicatorSizePatch::PlotIndicatorSize const& kOther)
 		{	// Exact floating point comparison
 			return (onScreen == kOther.onScreen &&

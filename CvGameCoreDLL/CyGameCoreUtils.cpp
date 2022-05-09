@@ -262,3 +262,4 @@ int cyGetEspionageModifier(int iOurTeam, int iTargetTeam)
 {
 	return getEspionageModifier((TeamTypes)iOurTeam, (TeamTypes)iTargetTeam);
 }
+
