@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Debugger breakpoints in Civ4BeyondSword.exe (native code) exported from
+	 Visual Studio 2010. They're not exactly at the addresses that SMC-PoC
+	 modifies, but pretty close. Perhaps helpful for developers.
+	 May have to use search-and-replace to correct the local path
+	 C:\Program Files (x86)\Sid Meier's Civilization 4\Beyond the Sword\Civ4BeyondSword.exe
+	 -->
 <BreakpointCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Breakpoints>
     <Breakpoint>

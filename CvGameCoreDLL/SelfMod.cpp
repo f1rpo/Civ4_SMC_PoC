@@ -118,16 +118,20 @@ public:
 					// std::pow(fHeightRatio, 0.85f)
 		}
 		/*	[This part is aimed at BUG integration but does no harm w/o BUG.]
-			Players who use a big FoV tend to zoom in farther, I think, but I still
-			expect there to be less space per plot when the FoV is larger. (But I'm
-			not going to dirty the globe layer in response to a FoV change - that
-			would probably cause stuttering while the player adjusts the FoV slider.) */
+			FoV correlates with screen size, (typical) camera distance and
+			the player's distance from the screen. And BtS seems to make a small
+			adjustment based on FoV and camera distance too (probably
+			not explicitly). So it's hard to reason about this adjustment.
+			In my tests, it has had the desired result of making the diameters
+			about one quarter of a plot's side length. */
 		if (bAdjustToFoV)
 		{
 			float fTypicalFoV = 40;
 			ffBaseSize.onScreen *= std::min(2.f, std::max(0.5f,
 					std::sqrt(fTypicalFoV / GC.getFIELD_OF_VIEW())));
 		}
+		/*	(I'm not going to dirty the globe layer in response to a FoV change - that
+			would probably cause stuttering while the player adjusts the FoV slider.) */
 	#ifdef BUG_OPTIONS
 		{
 			int iUserChoice = BUGOption::getValue("MainInterface__OffScreenUnitSizeMult");
@@ -147,7 +151,7 @@ public:
 
 		/*	The onscreen size is hardcoded as an immediate operand (in FP32 format)
 			in three places and the offscreen size in one place.
-			|Code addr.|Disassembly							|Machine code
+			|Code addr.| Disassembly						| Code bytes
 			------------------------------------------------------------------------------
 			 00464A08	push 42280000h						 68 00 00 28 42
 			 004B76F4		(same as above)
